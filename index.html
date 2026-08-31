@@ -11,615 +11,631 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-  :root{
-    --paper:#F5FAF7;
-    --paper-raised:#FFFFFF;
-    --ink:#131E1A;
-    --ink-dim:#4B5B54;
-    --ink-faint:#84958D;
-    --line:#DCEAE3;
-    --emerald:#1B8A6B;
-    --emerald-deep:#116349;
-    --emerald-tint:#D6F0E4;
-    --noir:#131E1A;
-    --noir-deep:#000000;
-    --noir-tint:#E3F0E9;
-    --live:#2F7A4C;
-    --shadow: 0 1px 2px rgba(19,30,26,0.06), 0 10px 28px rgba(19,30,26,0.08);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#0D1614;
-      --paper-raised:#152420;
-      --ink:#E7F5EF;
-      --ink-dim:#AFC6BC;
-      --ink-faint:#75897F;
-      --line:#233C34;
-      --emerald:#4DD9A8;
-      --emerald-deep:#8FF0C9;
-      --emerald-tint:#173028;
-      --noir:#E7F5EF;
-      --noir-deep:#FFFFFF;
-      --noir-tint:#1C332B;
-      --live:#66CD8C;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#0D1614;
-    --paper-raised:#152420;
-    --ink:#E7F5EF;
-    --ink-dim:#AFC6BC;
-    --ink-faint:#75897F;
-    --line:#233C34;
-    --emerald:#4DD9A8;
-    --emerald-deep:#8FF0C9;
-    --emerald-tint:#173028;
-    --noir:#E7F5EF;
-    --noir-deep:#FFFFFF;
-    --noir-tint:#1C332B;
-    --live:#66CD8C;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
-  }
+:root{
+--paper:#F5FAF7;
+--paper-raised:#FFFFFF;
+--ink:#131E1A;
+--ink-dim:#4B5B54;
+--ink-faint:#84958D;
+--line:#DCEAE3;
+--emerald:#1B8A6B;
+--emerald-deep:#116349;
+--emerald-tint:#D6F0E4;
+--noir:#131E1A;
+--noir-deep:#000000;
+--noir-tint:#E3F0E9;
+--live:#2F7A4C;
+--shadow: 0 1px 2px rgba(19,30,26,0.06), 0 10px 28px rgba(19,30,26,0.08);
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--paper:#0D1614;
+--paper-raised:#152420;
+--ink:#E7F5EF;
+--ink-dim:#AFC6BC;
+--ink-faint:#75897F;
+--line:#233C34;
+--emerald:#4DD9A8;
+--emerald-deep:#8FF0C9;
+--emerald-tint:#173028;
+--noir:#E7F5EF;
+--noir-deep:#FFFFFF;
+--noir-tint:#1C332B;
+--live:#66CD8C;
+--shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
+}
+}
+:root[data-theme="dark"]{
+--paper:#0D1614;
+--paper-raised:#152420;
+--ink:#E7F5EF;
+--ink-dim:#AFC6BC;
+--ink-faint:#75897F;
+--line:#233C34;
+--emerald:#4DD9A8;
+--emerald-deep:#8FF0C9;
+--emerald-tint:#173028;
+--noir:#E7F5EF;
+--noir-deep:#FFFFFF;
+--noir-tint:#1C332B;
+--live:#66CD8C;
+--shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
+}
 
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit;}
-  h1,h2,h3{font-family:'Fraunces', Georgia, 'Times New Roman', serif; font-weight:600; text-wrap:balance; margin:0;}
-  p{margin:0;}
-  .mono{font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric:tabular-nums;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 2.5rem);}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+line-height:1.55;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+a{color:inherit;}
+h1,h2,h3{font-family:'Fraunces', Georgia, 'Times New Roman', serif; font-weight:600; text-wrap:balance; margin:0;}
+p{margin:0;}
+.mono{font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric:tabular-nums;}
+.wrap{max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 2.5rem);}
 
-  a:focus-visible, button:focus-visible{outline:2px solid var(--emerald); outline-offset:3px; border-radius:4px;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--emerald); outline-offset:3px; border-radius:4px;}
 
-  /* ---------- Masthead ---------- */
-  .masthead{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);}
-  .masthead__top{
-    max-width:1080px; margin:0 auto; padding:0.9rem clamp(1.25rem, 4vw, 2.5rem) 0.7rem;
-    display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap;
-  }
-  .wordmark{font-family:'Fraunces', serif; font-weight:700; font-size:1.35rem; text-decoration:none; letter-spacing:-0.01em;}
-  .masthead__kicker{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint);}
-  .ticker{border-top:1px solid var(--line); background:var(--emerald-tint); overflow:hidden; white-space:nowrap;}
-  .ticker__track{display:inline-flex; gap:2.5rem; padding:0.45rem clamp(1.25rem, 4vw, 2.5rem); animation:ticker 34s linear infinite;}
-  .ticker__track span{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.03em; color:var(--emerald-deep); font-weight:500;}
-  @keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-  @media (prefers-reduced-motion: reduce){ .ticker__track{animation:none;} }
+/* ---------- Masthead ---------- */
+.masthead{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);}
+.masthead__top{
+max-width:1080px; margin:0 auto; padding:0.9rem clamp(1.25rem, 4vw, 2.5rem) 0.7rem;
+display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+}
+.wordmark{font-family:'Fraunces', serif; font-weight:700; font-size:1.35rem; text-decoration:none; letter-spacing:-0.01em;}
+.masthead__kicker{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint);}
+.ticker{border-top:1px solid var(--line); background:var(--emerald-tint); overflow:hidden; white-space:nowrap;}
+.ticker__track{display:inline-flex; gap:2.5rem; padding:0.45rem clamp(1.25rem, 4vw, 2.5rem); animation:ticker 34s linear infinite;}
+.ticker__track span{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.03em; color:var(--emerald-deep); font-weight:500;}
+@keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){ .ticker__track{animation:none;} }
 
-  /* ---------- Hero ---------- */
-  .hero{padding:clamp(2.75rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);}
-  .dateline{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--noir); font-weight:600;}
-  .hero h1{font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; margin-top:0.6rem; letter-spacing:-0.02em;}
-  .hero__sub{max-width:42rem; margin-top:1.25rem; font-size:1.08rem; color:var(--ink-dim); max-width:60ch;}
-  .hero__note{margin-top:1rem; font-size:0.86rem; color:var(--ink-faint); max-width:60ch; border-left:2px solid var(--emerald); padding-left:0.8rem;}
-  .hero__meta{margin-top:1.4rem; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
-  .tag{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.2rem 0.5rem; border-radius:3px; font-weight:600;}
-  .tag--sample{background:var(--noir-tint); color:var(--ink-dim);}
-  .tag--live{background:var(--emerald-tint); color:var(--emerald-deep);}
-  .hero__actions{margin-top:2rem; display:flex; gap:0.9rem; flex-wrap:wrap;}
-  .btn{display:inline-flex; align-items:center; gap:0.4rem; padding:0.75rem 1.3rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:0.92rem; border:1px solid transparent; transition:transform .15s ease, background .15s ease;}
-  .btn--primary{background:var(--emerald); color:#fff;}
-  .btn--primary:hover{background:var(--emerald-deep); transform:translateY(-1px);}
-  .btn--ghost{border-color:var(--line); color:var(--ink);}
-  .btn--ghost:hover{border-color:var(--emerald); color:var(--emerald-deep);}
+/* ---------- Hero ---------- */
+.hero{padding:clamp(2.75rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);}
+.dateline{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--noir); font-weight:600;}
+.hero h1{font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; margin-top:0.6rem; letter-spacing:-0.02em;}
+.hero__sub{max-width:42rem; margin-top:1.25rem; font-size:1.08rem; color:var(--ink-dim); max-width:60ch;}
+.hero__note{margin-top:1rem; font-size:0.86rem; color:var(--ink-faint); max-width:60ch; border-left:2px solid var(--emerald); padding-left:0.8rem;}
+.hero__meta{margin-top:1.4rem; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
+.tag{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.2rem 0.5rem; border-radius:3px; font-weight:600;}
+.tag--sample{background:var(--noir-tint); color:var(--ink-dim);}
+.tag--live{background:var(--emerald-tint); color:var(--emerald-deep);}
+.hero__actions{margin-top:2rem; display:flex; gap:0.9rem; flex-wrap:wrap;}
+.btn{display:inline-flex; align-items:center; gap:0.4rem; padding:0.75rem 1.3rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:0.92rem; border:1px solid transparent; transition:transform .15s ease, background .15s ease;}
+.btn--primary{background:var(--emerald); color:#fff;}
+.btn--primary:hover{background:var(--emerald-deep); transform:translateY(-1px);}
+.btn--ghost{border-color:var(--line); color:var(--ink);}
+.btn--ghost:hover{border-color:var(--emerald); color:var(--emerald-deep);}
 
-  /* ---------- Section scaffolding ---------- */
-  .section-label{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.9rem;}
-  .desk-section{padding:clamp(2.75rem,6vw,4.5rem) 0; border-top:1px solid var(--line);}
-  .desk-section--alt{background:var(--paper-raised);}
-  .desk-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;}
-  .desk-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);}
-  .desk-note{max-width:34ch; font-size:0.88rem; color:var(--ink-dim);}
+/* ---------- Section scaffolding ---------- */
+.section-label{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.9rem;}
+.desk-section{padding:clamp(2.75rem,6vw,4.5rem) 0; border-top:1px solid var(--line);}
+.desk-section--alt{background:var(--paper-raised);}
+.desk-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;}
+.desk-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);}
+.desk-note{max-width:34ch; font-size:0.88rem; color:var(--ink-dim);}
 
-  /* ---------- Desk grid ---------- */
-  .desks{padding:clamp(2.5rem,6vw,4rem) 0 0;}
-  .desk-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
-  .desk-card{background:var(--paper-raised); padding:1.5rem; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:0.8rem; transition:background .15s ease;}
-  .desk-card:hover{background:var(--emerald-tint);}
-  .desk-card__num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--noir); font-weight:600; letter-spacing:0.06em;}
-  .desk-card svg{width:26px; height:26px; stroke:var(--emerald); fill:none; stroke-width:1.6;}
-  .desk-card h3{font-size:1.05rem; font-weight:600;}
-  .desk-card p{font-size:0.86rem; color:var(--ink-dim);}
+/* ---------- Desk grid ---------- */
+.desks{padding:clamp(2.5rem,6vw,4rem) 0 0;}
+.desk-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+.desk-card{background:var(--paper-raised); padding:1.5rem; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:0.8rem; transition:background .15s ease;}
+.desk-card:hover{background:var(--emerald-tint);}
+.desk-card__num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--noir); font-weight:600; letter-spacing:0.06em;}
+.desk-card svg{width:26px; height:26px; stroke:var(--emerald); fill:none; stroke-width:1.6;}
+.desk-card h3{font-size:1.05rem; font-weight:600;}
+.desk-card p{font-size:0.86rem; color:var(--ink-dim);}
 
-  /* ---------- News desk ---------- */
-  .dispatch-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem;}
-  .dispatch{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.4rem; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:0.7rem;}
-  .dispatch__eyebrow{display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color:var(--ink-faint); letter-spacing:0.05em;}
-  .dispatch h3{font-size:1.1rem; line-height:1.3;}
-  .dispatch p{font-size:0.9rem; color:var(--ink-dim);}
-  .dispatch__credit{font-size:0.76rem; color:var(--ink-faint); border-top:1px dashed var(--line); padding-top:0.7rem; margin-top:0.2rem;}
-  .dispatch__link{font-size:0.82rem; font-weight:600; color:var(--emerald-deep); text-decoration:none;}
-  .dispatch__link:hover{text-decoration:underline;}
+/* ---------- News desk ---------- */
+.dispatch-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem;}
+.dispatch{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.4rem; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:0.7rem;}
+.dispatch__eyebrow{display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color:var(--ink-faint); letter-spacing:0.05em;}
+.dispatch h3{font-size:1.1rem; line-height:1.3;}
+.dispatch p{font-size:0.9rem; color:var(--ink-dim);}
+.dispatch__credit{font-size:0.76rem; color:var(--ink-faint); border-top:1px dashed var(--line); padding-top:0.7rem; margin-top:0.2rem;}
+.dispatch__link{font-size:0.82rem; font-weight:600; color:var(--emerald-deep); text-decoration:none;}
+.dispatch__link:hover{text-decoration:underline;}
 
-  /* ---------- Review desk ---------- */
-  .review{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:2.5rem; align-items:start;}
-  .review__stamp{border:1px solid var(--noir); color:var(--noir); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.1em; padding:0.85rem 1rem; border-radius:4px; text-align:center;}
-  .review__stamp .score{display:block; font-size:1.6rem; color:var(--ink); font-weight:600; margin-bottom:0.15rem;}
-  .review blockquote{font-family:'Fraunces', serif; font-style:italic; font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.4; margin:0 0 1rem; color:var(--ink);}
-  .review__body p{color:var(--ink-dim); font-size:0.95rem; margin-bottom:0.9rem;}
-  .tracklist{list-style:none; margin:0 0 1rem; padding:0; font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--ink-dim); display:grid; gap:0.35rem;}
-  .tracklist li{display:flex; gap:0.6rem;}
-  .tracklist span.n{color:var(--ink-faint); width:1.4rem; flex-shrink:0;}
-  .tracklist li.title-track{color:var(--emerald-deep); font-weight:600;}
-  @media (max-width: 720px){ .review{grid-template-columns:1fr;} .review__stamp{width:fit-content;} }
+/* ---------- Review desk ---------- */
+.review{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:2.5rem; align-items:start;}
+.review__stamp{border:1px solid var(--noir); color:var(--noir); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.1em; padding:0.85rem 1rem; border-radius:4px; text-align:center;}
+.review__stamp .score{display:block; font-size:1.6rem; color:var(--ink); font-weight:600; margin-bottom:0.15rem;}
+.review blockquote{font-family:'Fraunces', serif; font-style:italic; font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.4; margin:0 0 1rem; color:var(--ink);}
+.review__body p{color:var(--ink-dim); font-size:0.95rem; margin-bottom:0.9rem;}
+.tracklist{list-style:none; margin:0 0 1rem; padding:0; font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--ink-dim); display:grid; gap:0.35rem;}
+.tracklist li{display:flex; gap:0.6rem;}
+.tracklist span.n{color:var(--ink-faint); width:1.4rem; flex-shrink:0;}
+.tracklist li.title-track{color:var(--emerald-deep); font-weight:600;}
+@media (max-width: 720px){ .review{grid-template-columns:1fr;} .review__stamp{width:fit-content;} }
 
-  /* ---------- Screening room ---------- */
-  .screen-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;}
-  .screen-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:var(--shadow);}
-  .screen-card__frame{position:relative; aspect-ratio:16/9; background:#000;}
-  .screen-card__frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
-  .screen-card__placeholder{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.6rem; color:var(--ink-faint); background:var(--emerald-tint);}
-  .screen-card__placeholder svg{width:34px; height:34px; stroke:var(--emerald); fill:none; stroke-width:1.5;}
-  .screen-card__body{padding:1.1rem 1.3rem;}
-  .screen-card__body h3{font-size:0.98rem; margin-bottom:0.35rem;}
-  .screen-card__body p{font-size:0.84rem; color:var(--ink-dim);}
+/* ---------- Screening room ---------- */
+.screen-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;}
+.screen-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:var(--shadow);}
+.screen-card__frame{position:relative; aspect-ratio:16/9; background:#000;}
+.screen-card__frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+.screen-card__placeholder{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.6rem; color:var(--ink-faint); background:var(--emerald-tint);}
+.screen-card__placeholder svg{width:34px; height:34px; stroke:var(--emerald); fill:none; stroke-width:1.5;}
+.screen-card__body{padding:1.1rem 1.3rem;}
+.screen-card__body h3{font-size:0.98rem; margin-bottom:0.35rem;}
+.screen-card__body p{font-size:0.84rem; color:var(--ink-dim);}
 
-  /* ---------- Signal desk ---------- */
-  .signal-list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper-raised);}
-  .signal-row{display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; padding:1.1rem 1.4rem; border-top:1px solid var(--line);}
-  .signal-row:first-child{border-top:none;}
-  .signal-row__name{font-weight:600; font-size:0.98rem;}
-  .signal-row__meta{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); margin-top:0.25rem;}
-  .signal-row__countdown{font-family:'IBM Plex Mono', monospace; font-size:0.95rem; font-weight:600; color:var(--emerald-deep); text-align:right; white-space:nowrap;}
-  .signal-row__countdown small{display:block; font-size:0.62rem; font-weight:500; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em;}
-  .signal-footnote{margin-top:1rem; font-size:0.78rem; color:var(--ink-faint);}
-  @media (max-width:560px){ .signal-row{grid-template-columns:1fr;} .signal-row__countdown{text-align:left;} }
+/* ---------- Signal desk ---------- */
+.signal-list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper-raised);}
+.signal-row{display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; padding:1.1rem 1.4rem; border-top:1px solid var(--line);}
+.signal-row:first-child{border-top:none;}
+.signal-row__name{font-weight:600; font-size:0.98rem;}
+.signal-row__meta{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); margin-top:0.25rem;}
+.signal-row__countdown{font-family:'IBM Plex Mono', monospace; font-size:0.95rem; font-weight:600; color:var(--emerald-deep); text-align:right; white-space:nowrap;}
+.signal-row__countdown small{display:block; font-size:0.62rem; font-weight:500; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em;}
+.signal-footnote{margin-top:1rem; font-size:0.78rem; color:var(--ink-faint);}
+@media (max-width:560px){ .signal-row{grid-template-columns:1fr;} .signal-row__countdown{text-align:left;} }
 
-  /* ---------- Quiz desk ---------- */
-  .quiz-panel{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow); max-width:640px;}
-  .quiz-progress{font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-faint); margin-bottom:0.6rem; letter-spacing:0.05em;}
-  .quiz-question{font-size:1.2rem; margin-bottom:1.1rem;}
-  .quiz-options{display:grid; gap:0.6rem;}
-  .quiz-option{text-align:left; padding:0.8rem 1rem; border:1px solid var(--line); border-radius:5px; background:transparent; color:var(--ink); font-family:inherit; font-size:0.92rem; cursor:pointer; transition:border-color .15s ease, background .15s ease;}
-  .quiz-option:hover{border-color:var(--emerald); background:var(--emerald-tint);}
-  .quiz-result{display:none;}
-  .quiz-result.is-active{display:block;}
-  .quiz-question-wrap.is-hidden{display:none;}
-  .quiz-result__title{font-size:1.4rem; margin-bottom:0.6rem;}
-  .quiz-result__body{color:var(--ink-dim); font-size:0.95rem; margin-bottom:1rem;}
-  .quiz-result__track{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--noir); margin-bottom:1.2rem;}
-  .quiz-reset{font-size:0.85rem; font-weight:600; color:var(--emerald-deep); background:none; border:none; cursor:pointer; padding:0; font-family:inherit;}
-  .quiz-reset:hover{text-decoration:underline;}
+/* ---------- Quiz desk ---------- */
+.quiz-panel{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow); max-width:640px;}
+.quiz-progress{font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-faint); margin-bottom:0.6rem; letter-spacing:0.05em;}
+.quiz-question{font-size:1.2rem; margin-bottom:1.1rem;}
+.quiz-options{display:grid; gap:0.6rem;}
+.quiz-option{text-align:left; padding:0.8rem 1rem; border:1px solid var(--line); border-radius:5px; background:transparent; color:var(--ink); font-family:inherit; font-size:0.92rem; cursor:pointer; transition:border-color .15s ease, background .15s ease;}
+.quiz-option:hover{border-color:var(--emerald); background:var(--emerald-tint);}
+.quiz-result{display:none;}
+.quiz-result.is-active{display:block;}
+.quiz-question-wrap.is-hidden{display:none;}
+.quiz-result__title{font-size:1.4rem; margin-bottom:0.6rem;}
+.quiz-result__body{color:var(--ink-dim); font-size:0.95rem; margin-bottom:1rem;}
+.quiz-result__track{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--noir); margin-bottom:1.2rem;}
+.quiz-reset{font-size:0.85rem; font-weight:600; color:var(--emerald-deep); background:none; border:none; cursor:pointer; padding:0; font-family:inherit;}
+.quiz-reset:hover{text-decoration:underline;}
 
-  /* ---------- Market desk ---------- */
-  .market-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1.4rem;}
-  .market-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.3rem; display:flex; flex-direction:column; gap:0.6rem; box-shadow:var(--shadow);}
-  .market-card h3{font-size:1.02rem;}
-  .market-card p{font-size:0.85rem; color:var(--ink-dim);}
-  .market-card a{font-size:0.85rem; font-weight:600; color:var(--emerald-deep); text-decoration:none;}
-  .market-card a:hover{text-decoration:underline;}
+/* ---------- Market desk ---------- */
+.market-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1.4rem;}
+.market-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.3rem; display:flex; flex-direction:column; gap:0.6rem; box-shadow:var(--shadow);}
+.market-card h3{font-size:1.02rem;}
+.market-card p{font-size:0.85rem; color:var(--ink-dim);}
+.market-card a{font-size:0.85rem; font-weight:600; color:var(--emerald-deep); text-decoration:none;}
+.market-card a:hover{text-decoration:underline;}
 
-  /* ---------- Footer / colophon ---------- */
-  .colophon{border-top:1px solid var(--line); background:var(--paper-raised); padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem;}
-  .colophon__grid{display:grid; grid-template-columns:1.1fr 1.4fr; gap:2.5rem;}
-  .colophon .wordmark{font-size:1.15rem;}
-  .colophon p{font-size:0.82rem; color:var(--ink-dim); margin-top:0.9rem; max-width:46ch;}
-  .colophon__fine{font-size:0.72rem; color:var(--ink-faint); margin-top:1.5rem; font-family:'IBM Plex Mono', monospace; line-height:1.6;}
-  @media (max-width:720px){ .colophon__grid{grid-template-columns:1fr;} }
+/* ---------- Footer / colophon ---------- */
+.colophon{border-top:1px solid var(--line); background:var(--paper-raised); padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem;}
+.colophon__grid{display:grid; grid-template-columns:1.1fr 1.4fr; gap:2.5rem;}
+.colophon .wordmark{font-size:1.15rem;}
+.colophon p{font-size:0.82rem; color:var(--ink-dim); margin-top:0.9rem; max-width:46ch;}
+.colophon__fine{font-size:0.72rem; color:var(--ink-faint); margin-top:1.5rem; font-family:'IBM Plex Mono', monospace; line-height:1.6;}
+@media (max-width:720px){ .colophon__grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
 <div class="page">
-  <header class="masthead" id="top">
-    <div class="masthead__top">
-      <a class="wordmark" href="#top">ZEROBASEONE Wire</a>
-      <span class="masthead__kicker">Unofficial Zerose Dispatch · English Edition</span>
-    </div>
-    <div class="ticker" aria-label="Latest wire headlines">
-      <div class="ticker__track">
-        <span>ZEROBASEONE RETURNS AS FIVE — "TOP 5" LEADS 6TH MINI ALBUM "ASCEND-"</span>
-        <span>ZHANG HAO, RICKY, KIM GYU VIN, HAN YU JIN DEPART FOR YH ENTERTAINMENT AFTER MARCH TOUR FINALE</span>
-        <span>SPOILER FILM "RESERVED" TEASES NEXT COMEBACK: "TOP 5 WILL BE BACK"</span>
-        <span>SECOND JAPANESE EP "回帰LOVE" ARRIVES AUG 19 WITH PRE-RELEASE TRACK "EXISTENCE"</span>
-        <span>ZEROBASEONE RETURNS AS FIVE — "TOP 5" LEADS 6TH MINI ALBUM "ASCEND-"</span>
-        <span>ZHANG HAO, RICKY, KIM GYU VIN, HAN YU JIN DEPART FOR YH ENTERTAINMENT AFTER MARCH TOUR FINALE</span>
-        <span>SPOILER FILM "RESERVED" TEASES NEXT COMEBACK: "TOP 5 WILL BE BACK"</span>
-        <span>SECOND JAPANESE EP "回帰LOVE" ARRIVES AUG 19 WITH PRE-RELEASE TRACK "EXISTENCE"</span>
-      </div>
-    </div>
-  </header>
+<header class="masthead" id="top">
+<div class="masthead__top">
+<a class="wordmark" href="#top">ZEROBASEONE Wire</a>
+<span class="masthead__kicker">Unofficial Zerose Dispatch · English Edition</span>
+</div>
+<div class="ticker" aria-label="Latest wire headlines">
+<div class="ticker__track">
+<span>SECOND JAPANESE EP "回帰LOVE" TOPS ORICON AND BILLBOARD JAPAN CHARTS</span>
+<span>SURPRISE TOKYO GUERRILLA SHOW DRAWS 4,000 FANS ON TWO HOURS' NOTICE</span>
+<span>SPOILER FILM "RESERVED" TEASES NEXT COMEBACK: "TOP 5 WILL BE BACK"</span>
+<span>ZEROBASEONE RETURNS AS FIVE — "TOP 5" LEADS 6TH MINI ALBUM "ASCEND-"</span>
+<span>SECOND JAPANESE EP "回帰LOVE" TOPS ORICON AND BILLBOARD JAPAN CHARTS</span>
+<span>SURPRISE TOKYO GUERRILLA SHOW DRAWS 4,000 FANS ON TWO HOURS' NOTICE</span>
+<span>SPOILER FILM "RESERVED" TEASES NEXT COMEBACK: "TOP 5 WILL BE BACK"</span>
+<span>ZEROBASEONE RETURNS AS FIVE — "TOP 5" LEADS 6TH MINI ALBUM "ASCEND-"</span>
+</div>
+</div>
+</header>
 
-  <main>
-    <section class="hero wrap">
-      <p class="dateline">SEOUL — AUGUST 2026</p>
-      <h1>Nine became five.<br>The wire keeps running.</h1>
-      <p class="hero__sub">ZEROBASEONE spent the start of 2026 closing out the <em>HERE&amp;NOW</em> World Tour Encore — a run that ended with back-to-back stops at K-Arena Yokohama in February and KSPO Dome in Seoul in March, capping a tour that drew more than 150,000 fans across Seoul, Bangkok, Saitama, Kuala Lumpur, Singapore, Taipei, and Hong Kong. Within days of the Seoul finale, agency WAKEONE confirmed that four members were leaving for a different label. The remaining five returned two months later with sixth mini-album <em>Ascend-</em>, led by title track "TOP 5" — and on August 16 dropped a spoiler film for a follow-up comeback that ends on one line: "TOP 5 WILL BE BACK." This page is a working build of how <strong>ZEROBASEONE Wire</strong> tracks all of it for English-speaking Zerose — translated, sourced, and converted to whatever timezone you're reading from.</p>
-      <p class="hero__note">A note on the lineup: ZEROBASEONE debuted in July 2023 as a nine-member group formed through the survival show <em>Boys Planet</em>. In March 2026, shortly after the HERE&amp;NOW World Tour Encore concluded, agency WAKEONE confirmed that members Zhang Hao, Ricky, Kim Gyu Vin, and Han Yu Jin were departing the group; all four are reported to have signed with a different agency, YH Entertainment. WAKEONE's public comment did not detail a cause, stating only that the remaining members "are preparing to return and impress as soon as possible." ZEROBASEONE has continued as five members — Sung Han Bin, Kim Ji Woong, Seok Matthew, Kim Tae Rae, and Park Gun Wook — since. Source: Soompi.</p>
-      <p class="hero__meta">DISPATCH NO. 0001 · FILED 09:00 KST · <span class="tag tag--live">Ascend- Era · 2026</span></p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#desks">Enter the wire room ↓</a>
-        <a class="btn btn--ghost" href="#about">What is this?</a>
-      </div>
-    </section>
+<main>
+<section class="hero wrap">
+<p class="dateline">SEOUL — AUGUST 2026</p>
+<h1>Nine became five.<br>The wire keeps running.</h1>
+<p class="hero__sub">ZEROBASEONE spent the start of 2026 closing out the <em>HERE&amp;NOW</em> World Tour Encore — a run that ended with back-to-back stops at K-Arena Yokohama in February and KSPO Dome in Seoul in March, capping a tour that drew more than 150,000 fans across Seoul, Bangkok, Saitama, Kuala Lumpur, Singapore, Taipei, and Hong Kong. Within days of the Seoul finale, agency WAKEONE confirmed that four members were leaving for a different label. The remaining five returned two months later with sixth mini-album <em>Ascend-</em>, led by title track "TOP 5." August brought a second Japanese EP, "回帰LOVE" (Kaiki LOVE), which topped both the Oricon and Billboard Japan album charts, plus a two-hours'-notice guerrilla show in Tokyo — and on August 16 a spoiler film for a follow-up comeback that ends on one line: "TOP 5 WILL BE BACK." This page is a working build of how <strong>ZEROBASEONE Wire</strong> tracks all of it for English-speaking Zerose — translated, sourced, and converted to whatever timezone you're reading from.</p>
+<p class="hero__note">A note on the lineup: ZEROBASEONE debuted in July 2023 as a nine-member group formed through the survival show <em>Boys Planet</em>. In March 2026, shortly after the HERE&amp;NOW World Tour Encore concluded, agency WAKEONE confirmed that members Zhang Hao, Ricky, Kim Gyu Vin, and Han Yu Jin were departing the group; all four are reported to have signed with a different agency, YH Entertainment. WAKEONE's public comment did not detail a cause, stating only that the remaining members "are preparing to return and impress as soon as possible." ZEROBASEONE has continued as five members — Sung Han Bin, Kim Ji Woong, Seok Matthew, Kim Tae Rae, and Park Gun Wook — since. Source: Soompi.</p>
+<p class="hero__meta">DISPATCH NO. 0001 · FILED 09:00 KST · <span class="tag tag--live">Ascend- Era · 2026</span></p>
+<div class="hero__actions">
+<a class="btn btn--primary" href="#desks">Enter the wire room ↓</a>
+<a class="btn btn--ghost" href="#about">What is this?</a>
+</div>
+</section>
 
-    <section class="desks wrap" id="desks">
-      <p class="section-label">The desks</p>
-      <div class="desk-grid">
-        <a class="desk-card" href="#news">
-          <span class="desk-card__num">DESK 01</span>
-          <svg viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4Z"/><path d="M17 4v14a2 2 0 0 0 2 2h1"/><path d="M7 8h8M7 12h8M7 16h5"/></svg>
-          <h3>News Desk</h3>
-          <p>Korean and English coverage, translated and summarized — always credited back to the original outlet.</p>
-        </a>
-        <a class="desk-card" href="#reviews">
-          <span class="desk-card__num">DESK 02</span>
-          <svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.8 6.9 18l1.3-5.5-4.2-3.8 5.6-.6L12 3Z"/></svg>
-          <h3>Review Desk</h3>
-          <p>Track-by-track reads on every era, from <em>Youth in the Shade</em> to whatever's coming next.</p>
-        </a>
-        <a class="desk-card" href="#screening">
-          <span class="desk-card__num">DESK 03</span>
-          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
-          <h3>Screening Room</h3>
-          <p>Official videos only, curated and embedded — never reuploaded.</p>
-        </a>
-        <a class="desk-card" href="#signal">
-          <span class="desk-card__num">DESK 04</span>
-          <svg viewBox="0 0 24 24"><path d="M12 20v-6"/><path d="M8.5 17.5a5 5 0 0 1 0-9"/><path d="M4.5 20a10 10 0 0 1 0-16"/><path d="M15.5 17.5a5 5 0 0 0 0-9"/><path d="M19.5 20a10 10 0 0 0 0-16"/><circle cx="12" cy="12" r="1.4"/></svg>
-          <h3>Signal Desk</h3>
-          <p>A running clock on the Ascend- era's key dates, converted to your local time.</p>
-        </a>
-        <a class="desk-card" href="#quiz">
-          <span class="desk-card__num">DESK 05</span>
-          <svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.1-1.5 2.2"/><circle cx="12" cy="17.5" r="0.9" fill="var(--emerald)"/><circle cx="12" cy="12" r="9"/></svg>
-          <h3>Quiz Desk</h3>
-          <p>Quick, shareable quizzes built for the group chat, not the algorithm.</p>
-        </a>
-        <a class="desk-card" href="#market">
-          <span class="desk-card__num">DESK 06</span>
-          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-          <h3>Market Desk</h3>
-          <p>Where to buy official merch abroad, without the guesswork.</p>
-        </a>
-      </div>
-    </section>
+<section class="desks wrap" id="desks">
+<p class="section-label">The desks</p>
+<div class="desk-grid">
+<a class="desk-card" href="#news">
+<span class="desk-card__num">DESK 01</span>
+<svg viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4Z"/><path d="M17 4v14a2 2 0 0 0 2 2h1"/><path d="M7 8h8M7 12h8M7 16h5"/></svg>
+<h3>News Desk</h3>
+<p>Korean and English coverage, translated and summarized — always credited back to the original outlet.</p>
+</a>
+<a class="desk-card" href="#reviews">
+<span class="desk-card__num">DESK 02</span>
+<svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.8 6.9 18l1.3-5.5-4.2-3.8 5.6-.6L12 3Z"/></svg>
+<h3>Review Desk</h3>
+<p>Track-by-track reads on every era, from <em>Youth in the Shade</em> to whatever's coming next.</p>
+</a>
+<a class="desk-card" href="#screening">
+<span class="desk-card__num">DESK 03</span>
+<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
+<h3>Screening Room</h3>
+<p>Official videos only, curated and embedded — never reuploaded.</p>
+</a>
+<a class="desk-card" href="#signal">
+<span class="desk-card__num">DESK 04</span>
+<svg viewBox="0 0 24 24"><path d="M12 20v-6"/><path d="M8.5 17.5a5 5 0 0 1 0-9"/><path d="M4.5 20a10 10 0 0 1 0-16"/><path d="M15.5 17.5a5 5 0 0 0 0-9"/><path d="M19.5 20a10 10 0 0 0 0-16"/><circle cx="12" cy="12" r="1.4"/></svg>
+<h3>Signal Desk</h3>
+<p>A running clock on the Ascend- era's key dates, converted to your local time.</p>
+</a>
+<a class="desk-card" href="#quiz">
+<span class="desk-card__num">DESK 05</span>
+<svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.1-1.5 2.2"/><circle cx="12" cy="17.5" r="0.9" fill="var(--emerald)"/><circle cx="12" cy="12" r="9"/></svg>
+<h3>Quiz Desk</h3>
+<p>Quick, shareable quizzes built for the group chat, not the algorithm.</p>
+</a>
+<a class="desk-card" href="#market">
+<span class="desk-card__num">DESK 06</span>
+<svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+<h3>Market Desk</h3>
+<p>Where to buy official merch abroad, without the guesswork.</p>
+</a>
+</div>
+</section>
 
-    <section class="desk-section" id="news">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 01 · News</p>
-            <h2>Translated for the timeline you don't read.</h2>
-          </div>
-          <p class="desk-note">Every dispatch below links back to its original source — this desk summarizes, it doesn't replace.</p>
-        </div>
-        <div class="dispatch-grid">
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>SEOUL — MAR 17</span></p>
-            <h3>Group reorganizes to five members after HERE&amp;NOW tour finale</h3>
-            <p>Days after the HERE&amp;NOW World Tour Encore concluded at Seoul's KSPO Dome, agency WAKEONE confirmed that members Zhang Hao, Ricky, Kim Gyu Vin, and Han Yu Jin were leaving ZEROBASEONE. All four are reported to have signed with a different agency, YH Entertainment. WAKEONE's brief statement said the remaining five members "are preparing to return and impress as soon as possible," without further detail on the departures.</p>
-            <p class="dispatch__credit">Summarized from Soompi by ZEROBASEONE Wire staff.</p>
-            <a class="dispatch__link" href="https://www.soompi.com/article/1825578wpp/zerobaseone-reported-to-make-spring-comeback-following-reorganization-as-5-member-group-agency-briefly-comments" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>SEOUL — MAY 18</span></p>
-            <h3>"Ascend-" arrives with "TOP 5," the first comeback as a five-member group</h3>
-            <p>The sixth mini-album landed at 6 PM KST with seven tracks, led by title song "TOP 5" — a title the group has said hints at its "bold new journey ahead" following the reorganization. The album folds in outside writing credits, including producer JUNNY co-composing "Changes" and former BIGSTAR member Jvde writing lyrics for "Exotic."</p>
-            <p class="dispatch__credit">Summarized from allkpop and TenAsia by ZEROBASEONE Wire staff.</p>
-            <a class="dispatch__link" href="https://www.allkpop.com/article/2026/05/zerobaseone-reveals-dynamic-7-track-lineup-for-ascend-spotlighting-title-song-top-5" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>SEOUL — AUG 16</span></p>
-            <h3>Spoiler film "Reserved" teases next comeback: "TOP 5 will be back"</h3>
-            <p>A mysterious spoiler film titled "Reserved" surfaced on the group's channels, closing on the line "TOP 5 WILL BE BACK" — confirming a new comeback is coming from the current five-member lineup. As of this writing, no release date, title track, or tracklist has been officially disclosed.</p>
-            <p class="dispatch__credit">Summarized from Soompi by ZEROBASEONE Wire staff.</p>
-            <a class="dispatch__link" href="https://www.soompi.com/article/1863250wpp/watch-zerobaseone-teases-comeback-with-spoiler-film-for-reserved" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="desk-section" id="news">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 01 · News</p>
+<h2>Translated for the timeline you don't read.</h2>
+</div>
+<p class="desk-note">Every dispatch below links back to its original source — this desk summarizes, it doesn't replace.</p>
+</div>
+<div class="dispatch-grid">
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>TOKYO — AUG 19</span></p>
+<h3>Second Japanese EP "回帰LOVE" tops the Oricon and Billboard Japan charts</h3>
+<p>The group's first Japanese release in about ten months topped the Oricon daily album chart for four straight days, the Oricon weekly chart, and Billboard Japan's Top Album Sales chart the same tracking week. The EP's title track, "Existence," and B-side "Aphrodite" lead a set that also includes a Japanese version of "TOP 5."</p>
+<p class="dispatch__credit">Summarized from allkpop and Herald Muse by ZEROBASEONE Wire staff.</p>
+<a class="dispatch__link" href="https://www.allkpop.com/article/2026/08/zerobaseone-top-oricon-chart-with-japanese-ep-kaiki-love" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>TOKYO — AUG 20</span></p>
+<h3>Surprise guerrilla show in Shinjuku draws 4,000 fans on two hours' notice</h3>
+<p>A free pop-up concert at Shinjuku Kabukicho Cinecity Square was announced only two hours ahead of showtime, filling the square with roughly 4,000 fans. The set closed with "Existence," featuring a surprise piano cameo from Omoinotake's Fujii Leo.</p>
+<p class="dispatch__credit">Summarized from allkpop by ZEROBASEONE Wire staff.</p>
+<a class="dispatch__link" href="https://www.allkpop.com/article/2026/08/zerobaseone-draws-4000-fans-to-surprise-tokyo-guerrilla-show" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>SEOUL — AUG 16</span></p>
+<h3>Spoiler film "Reserved" teases next comeback: "TOP 5 will be back"</h3>
+<p>A mysterious spoiler film titled "Reserved" surfaced on the group's channels, closing on the line "TOP 5 WILL BE BACK" — confirming a new comeback is coming from the current five-member lineup. As of this writing, no release date, title track, or tracklist has been officially disclosed.</p>
+<p class="dispatch__credit">Summarized from Soompi by ZEROBASEONE Wire staff.</p>
+<a class="dispatch__link" href="https://www.soompi.com/article/1863250wpp/watch-zerobaseone-teases-comeback-with-spoiler-film-for-reserved" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>SEOUL — MAY 18</span></p>
+<h3>"Ascend-" arrives with "TOP 5," the first comeback as a five-member group</h3>
+<p>The sixth mini-album landed at 6 PM KST with seven tracks, led by title song "TOP 5" — a title the group has said hints at its "bold new journey ahead" following the reorganization. The album folds in outside writing credits, including producer JUNNY co-composing "Changes" and former BIGSTAR member Jvde writing lyrics for "Exotic."</p>
+<p class="dispatch__credit">Summarized from allkpop and TenAsia by ZEROBASEONE Wire staff.</p>
+<a class="dispatch__link" href="https://www.allkpop.com/article/2026/05/zerobaseone-reveals-dynamic-7-track-lineup-for-ascend-spotlighting-title-song-top-5" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="reviews">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 02 · Review</p>
-            <h2>Revisiting the catalogue, track by track.</h2>
-          </div>
-          <p class="desk-note">Text only, always — no reposted photos or video frames on this desk.</p>
-        </div>
-        <div class="review">
-          <div class="review__stamp"><span class="score">3.7 / 5</span>EDITOR'S STAMP</div>
-          <div class="review__body">
-            <blockquote>"'TOP 5' doesn't try to hide the arithmetic — it turns a smaller lineup into the whole concept, and mostly earns the swagger it's reaching for."</blockquote>
-            <p><strong>Ascend- (2026): ZEROBASEONE's sixth mini-album, and its first release as a five-member group.</strong> Where the group's earlier eras leaned on scale — nine voices, wide harmonies, big ensemble choreography — <em>Ascend-</em> is built around the opposite bet: that five members can carry a title track by sheer confidence. "TOP 5" leans into synth-driven, mid-tempo swagger rather than the group's earlier youthful pop, and the album pulls in outside collaborators to help make the turn, including producer JUNNY co-writing "Changes" and former BIGSTAR member Jvde on lyrics for "Exotic."</p>
-            <p>It's a transitional record by design — coverage around it has focused as much on the reorganization itself as on the tracks — but "TOP 5" and closer "Zero to Hundred" are the two songs making the clearest case that the smaller line-up has its own identity, not just a smaller version of the old one.</p>
-            <ul class="tracklist">
-              <li><span class="n mono">01</span> Intro</li>
-              <li class="title-track"><span class="n mono">02</span> TOP 5 · Title Track</li>
-              <li><span class="n mono">03</span> V for Vision</li>
-              <li><span class="n mono">04</span> Customize</li>
-              <li><span class="n mono">05</span> Exotic</li>
-              <li><span class="n mono">06</span> Changes</li>
-              <li><span class="n mono">07</span> Zero to Hundred</li>
-            </ul>
-            <a class="dispatch__link" href="https://www.allkpop.com/article/2026/05/zerobaseone-reveals-dynamic-7-track-lineup-for-ascend-spotlighting-title-song-top-5" target="_blank" rel="noopener">Read the full track-by-track →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="desk-section desk-section--alt" id="reviews">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 02 · Review</p>
+<h2>Revisiting the catalogue, track by track.</h2>
+</div>
+<p class="desk-note">Text only, always — no reposted photos or video frames on this desk.</p>
+</div>
+<div class="review">
+<div class="review__stamp"><span class="score">3.7 / 5</span>EDITOR'S STAMP</div>
+<div class="review__body">
+<blockquote>"'TOP 5' doesn't try to hide the arithmetic — it turns a smaller lineup into the whole concept, and mostly earns the swagger it's reaching for."</blockquote>
+<p><strong>Ascend- (2026): ZEROBASEONE's sixth mini-album, and its first release as a five-member group.</strong> Where the group's earlier eras leaned on scale — nine voices, wide harmonies, big ensemble choreography — <em>Ascend-</em> is built around the opposite bet: that five members can carry a title track by sheer confidence. "TOP 5" leans into synth-driven, mid-tempo swagger rather than the group's earlier youthful pop, and the album pulls in outside collaborators to help make the turn, including producer JUNNY co-writing "Changes" and former BIGSTAR member Jvde on lyrics for "Exotic."</p>
+<p>It's a transitional record by design — coverage around it has focused as much on the reorganization itself as on the tracks — but "TOP 5" and closer "Zero to Hundred" are the two songs making the clearest case that the smaller line-up has its own identity, not just a smaller version of the old one.</p>
+<ul class="tracklist">
+<li><span class="n mono">01</span> Intro</li>
+<li class="title-track"><span class="n mono">02</span> TOP 5 · Title Track</li>
+<li><span class="n mono">03</span> V for Vision</li>
+<li><span class="n mono">04</span> Customize</li>
+<li><span class="n mono">05</span> Exotic</li>
+<li><span class="n mono">06</span> Changes</li>
+<li><span class="n mono">07</span> Zero to Hundred</li>
+</ul>
+<a class="dispatch__link" href="https://www.allkpop.com/article/2026/05/zerobaseone-reveals-dynamic-7-track-lineup-for-ascend-spotlighting-title-song-top-5" target="_blank" rel="noopener">Read the full track-by-track →</a>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section" id="screening">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 03 · Screening Room</p>
-            <h2>Only what ZB1's own channel actually published.</h2>
-          </div>
-          <p class="desk-note">Every clip here is an official YouTube embed, verified against ZEROBASEONE's own channel (@ZB1_official). If it isn't published there, it doesn't play on this desk.</p>
-        </div>
-        <div class="screen-grid">
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <iframe src="https://www.youtube.com/embed/7QGRDC7ngpE" title="ZEROBASEONE (제로베이스원) 'TOP 5' MV" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="screen-card__body">
-              <h3>"TOP 5" — Official MV</h3>
-              <p>The title track from sixth mini-album <em>Ascend-</em>, and the group's first comeback as five members.</p>
-            </div>
-          </div>
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <iframe src="https://www.youtube.com/embed/HnYtDIW7elY" title="ZEROBASEONE (제로베이스원) 'ICONIK' MV" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="screen-card__body">
-              <h3>"ICONIK" — Official MV</h3>
-              <p>The lead single from 2025's first full album, <em>Never Say Never</em>, from the group's original nine-member era.</p>
-            </div>
-          </div>
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <div class="screen-card__placeholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
-                <span class="tag tag--sample">Slot reserved</span>
-              </div>
-            </div>
-            <div class="screen-card__body">
-              <h3>"Reserved," whenever it lands</h3>
-              <p>A reserved slot for the teased comeback's official MV, added once it's published and its channel is verified.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="desk-section" id="screening">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 03 · Screening Room</p>
+<h2>Only what ZB1's own channel actually published.</h2>
+</div>
+<p class="desk-note">Every clip here is an official YouTube embed, verified against ZEROBASEONE's own channel (@ZB1_official1). If it isn't published there, it doesn't play on this desk.</p>
+</div>
+<div class="screen-grid">
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/Fb8wqlOUink" title="ZEROBASEONE (제로베이스원) &quot;Existence&quot; MV" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"Existence" — Official MV</h3>
+<p>The title track from second Japanese EP <em>回帰LOVE (Kaiki LOVE)</em>, which topped both the Oricon and Billboard Japan album charts.</p>
+</div>
+</div>
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/7QGRDC7ngpE" title="ZEROBASEONE (제로베이스원) 'TOP 5' MV" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"TOP 5" — Official MV</h3>
+<p>The title track from sixth mini-album <em>Ascend-</em>, and the group's first comeback as five members.</p>
+</div>
+</div>
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/HnYtDIW7elY" title="ZEROBASEONE (제로베이스원) 'ICONIK' MV" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"ICONIK" — Official MV</h3>
+<p>The lead single from 2025's first full album, <em>Never Say Never</em>, from the group's original nine-member era.</p>
+</div>
+</div>
+<div class="screen-card">
+<div class="screen-card__frame">
+<div class="screen-card__placeholder">
+<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
+<span class="tag tag--sample">Slot reserved</span>
+</div>
+</div>
+<div class="screen-card__body">
+<h3>"Reserved," whenever it lands</h3>
+<p>A reserved slot for the teased comeback's official MV, added once it's published and its channel is verified.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="signal">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 04 · Signal</p>
-            <h2>The comeback clock, wherever you are.</h2>
-          </div>
-          <p class="desk-note">A running timer on the Ascend- era's key dates — auto-converted to your local timezone. Past dates automatically flip to a "time since" count; a future date would switch to "time left" the moment one is confirmed.</p>
-        </div>
-        <div class="signal-list" id="signalList">
-          <div class="signal-row" data-target="2026-03-15T20:00:00+09:00">
-            <div>
-              <p class="signal-row__name">HERE&amp;NOW World Tour Encore closes in Seoul <span class="tag tag--sample">Estimated time</span></p>
-              <p class="signal-row__meta mono">~8:00 PM KST (estimated) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-          <div class="signal-row" data-target="2026-05-18T18:00:00+09:00">
-            <div>
-              <p class="signal-row__name">Ascend- released, first comeback as five <span class="tag tag--live">Confirmed</span></p>
-              <p class="signal-row__meta mono">6:00 PM KST (confirmed) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-          <div class="signal-row" data-target="2026-08-16T18:00:00+09:00">
-            <div>
-              <p class="signal-row__name">"Reserved" spoiler film released <span class="tag tag--sample">Estimated time</span></p>
-              <p class="signal-row__meta mono">~6:00 PM KST (estimated) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-        </div>
-        <p class="signal-footnote">Detected timezone: <span class="mono" id="detectedTz">—</span> · "Reserved" comeback details: <a class="dispatch__link" href="https://www.soompi.com/article/1863250wpp/watch-zerobaseone-teases-comeback-with-spoiler-film-for-reserved" target="_blank" rel="noopener">Soompi ↗</a></p>
-      </div>
-    </section>
+<section class="desk-section desk-section--alt" id="signal">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 04 · Signal</p>
+<h2>The comeback clock, wherever you are.</h2>
+</div>
+<p class="desk-note">A running timer on the Ascend- era's key dates — auto-converted to your local timezone. Past dates automatically flip to a "time since" count; a future date would switch to "time left" the moment one is confirmed.</p>
+</div>
+<div class="signal-list" id="signalList">
+<div class="signal-row" data-target="2026-05-18T18:00:00+09:00">
+<div>
+<p class="signal-row__name">Ascend- released, first comeback as five <span class="tag tag--live">Confirmed</span></p>
+<p class="signal-row__meta mono">6:00 PM KST (confirmed) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+<div class="signal-row" data-target="2026-08-16T18:00:00+09:00">
+<div>
+<p class="signal-row__name">"Reserved" spoiler film released <span class="tag tag--sample">Estimated time</span></p>
+<p class="signal-row__meta mono">~6:00 PM KST (estimated) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+<div class="signal-row" data-target="2026-08-19T00:00:00+09:00">
+<div>
+<p class="signal-row__name">回帰LOVE (Kaiki LOVE), 2nd Japanese EP, released <span class="tag tag--sample">Estimated time</span></p>
+<p class="signal-row__meta mono">~12:00 AM JST (estimated) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+</div>
+<p class="signal-footnote">Detected timezone: <span class="mono" id="detectedTz">—</span> · "Reserved" comeback details: <a class="dispatch__link" href="https://www.soompi.com/article/1863250wpp/watch-zerobaseone-teases-comeback-with-spoiler-film-for-reserved" target="_blank" rel="noopener">Soompi ↗</a> · No new tour dates are confirmed as of this writing.</p>
+</div>
+</section>
 
-    <section class="desk-section" id="quiz">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 05 · Quiz</p>
-            <h2>Which era matches your mood tonight?</h2>
-          </div>
-          <p class="desk-note">Three questions, no email required — built to demonstrate the interaction, not to collect data.</p>
-        </div>
+<section class="desk-section" id="quiz">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 05 · Quiz</p>
+<h2>Which era matches your mood tonight?</h2>
+</div>
+<p class="desk-note">Three questions, no email required — built to demonstrate the interaction, not to collect data.</p>
+</div>
 
-        <div class="quiz-panel">
-          <div class="quiz-body" id="quizBody">
-            <div class="quiz-question-wrap" data-q="0">
-              <p class="quiz-progress">QUESTION 1 / 3</p>
-              <p class="quiz-question">Pick a late-night activity.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Rewatching the "In Bloom" debut stage on loop</button>
-                <button class="quiz-option" data-era="cinema">Rewatching "Good So Bad" for the choreo break</button>
-                <button class="quiz-option" data-era="iconik">Blasting "ICONIK" to hype yourself up</button>
-                <button class="quiz-option" data-era="current">Learning the "TOP 5" choreo, phone in hand</button>
-              </div>
-            </div>
-            <div class="quiz-question-wrap is-hidden" data-q="1">
-              <p class="quiz-progress">QUESTION 2 / 3</p>
-              <p class="quiz-question">Pick a concept.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Nine guys, fresh off a survival show, pure introduction energy</button>
-                <button class="quiz-option" data-era="cinema">Cinematic, a little bittersweet, built for a music-video marathon</button>
-                <button class="quiz-option" data-era="iconik">Bold and self-assured, a full-length statement of arrival</button>
-                <button class="quiz-option" data-era="current">Lean, synth-driven, and unmistakably about proving a smaller lineup still hits</button>
-              </div>
-            </div>
-            <div class="quiz-question-wrap is-hidden" data-q="2">
-              <p class="quiz-progress">QUESTION 3 / 3</p>
-              <p class="quiz-question">Pick a feeling you want from a comeback.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Introduction</button>
-                <button class="quiz-option" data-era="cinema">Nostalgia</button>
-                <button class="quiz-option" data-era="iconik">Confidence</button>
-                <button class="quiz-option" data-era="current">Reinvention</button>
-              </div>
-            </div>
-          </div>
+<div class="quiz-panel">
+<div class="quiz-body" id="quizBody">
+<div class="quiz-question-wrap" data-q="0">
+<p class="quiz-progress">QUESTION 1 / 3</p>
+<p class="quiz-question">Pick a late-night activity.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Rewatching the "In Bloom" debut stage on loop</button>
+<button class="quiz-option" data-era="cinema">Rewatching "Good So Bad" for the choreo break</button>
+<button class="quiz-option" data-era="iconik">Blasting "ICONIK" to hype yourself up</button>
+<button class="quiz-option" data-era="current">Learning the "TOP 5" choreo, phone in hand</button>
+</div>
+</div>
+<div class="quiz-question-wrap is-hidden" data-q="1">
+<p class="quiz-progress">QUESTION 2 / 3</p>
+<p class="quiz-question">Pick a concept.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Nine guys, fresh off a survival show, pure introduction energy</button>
+<button class="quiz-option" data-era="cinema">Cinematic, a little bittersweet, built for a music-video marathon</button>
+<button class="quiz-option" data-era="iconik">Bold and self-assured, a full-length statement of arrival</button>
+<button class="quiz-option" data-era="current">Lean, synth-driven, and unmistakably about proving a smaller lineup still hits</button>
+</div>
+</div>
+<div class="quiz-question-wrap is-hidden" data-q="2">
+<p class="quiz-progress">QUESTION 3 / 3</p>
+<p class="quiz-question">Pick a feeling you want from a comeback.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Introduction</button>
+<button class="quiz-option" data-era="cinema">Nostalgia</button>
+<button class="quiz-option" data-era="iconik">Confidence</button>
+<button class="quiz-option" data-era="current">Reinvention</button>
+</div>
+</div>
+</div>
 
-          <div class="quiz-result" id="quizResult">
-            <p class="quiz-progress">RESULT</p>
-            <h3 class="quiz-result__title" id="resultTitle"></h3>
-            <p class="quiz-result__body" id="resultBody"></p>
-            <p class="quiz-result__track mono" id="resultTrack"></p>
-            <button class="quiz-reset" id="quizReset">Take it again ↺</button>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="quiz-result" id="quizResult">
+<p class="quiz-progress">RESULT</p>
+<h3 class="quiz-result__title" id="resultTitle"></h3>
+<p class="quiz-result__body" id="resultBody"></p>
+<p class="quiz-result__track mono" id="resultTrack"></p>
+<button class="quiz-reset" id="quizReset">Take it again ↺</button>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="market">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 06 · Market</p>
-            <h2>Buying official, from outside Korea.</h2>
-          </div>
-          <p class="desk-note">Links go to official storefronts. On the live site, tagged links here are where affiliate revenue would come from.</p>
-        </div>
-        <div class="market-grid">
-          <div class="market-card">
-            <h3>Weverse Shop</h3>
-            <p><em>Ascend-</em> album versions, photocards, and official merch, shipped worldwide.</p>
-            <a href="https://shop.weverse.io/en/shop/USD/artists/235" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
-          </div>
-          <div class="market-card">
-            <h3>Weverse — official community</h3>
-            <p>Member updates, live broadcasts, and comeback announcements, straight from the group.</p>
-            <a href="https://weverse.io/zerobaseone" target="_blank" rel="noopener">See official updates ↗</a>
-          </div>
-          <div class="market-card">
-            <h3>WAKEONE official store</h3>
-            <p>The agency's own global storefront for ZEROBASEONE albums and merch.</p>
-            <a href="https://zerobaseoneshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<section class="desk-section desk-section--alt" id="market">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 06 · Market</p>
+<h2>Buying official, from outside Korea.</h2>
+</div>
+<p class="desk-note">Links go to official storefronts. On the live site, tagged links here are where affiliate revenue would come from.</p>
+</div>
+<div class="market-grid">
+<div class="market-card">
+<h3>Weverse Shop</h3>
+<p><em>Ascend-</em> album versions, photocards, and official merch, shipped worldwide.</p>
+<a href="https://shop.weverse.io/en/shop/USD/artists/235" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
+</div>
+<div class="market-card">
+<h3>Weverse — official community</h3>
+<p>Member updates, live broadcasts, and comeback announcements, straight from the group.</p>
+<a href="https://weverse.io/zerobaseone" target="_blank" rel="noopener">See official updates ↗</a>
+</div>
+<div class="market-card">
+<h3>WAKEONE official store</h3>
+<p>The agency's own global storefront for ZEROBASEONE albums and merch.</p>
+<a href="https://zerobaseoneshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
+</div>
+</div>
+</div>
+</section>
+</main>
 
-  <footer class="colophon" id="about">
-    <div class="wrap colophon__grid">
-      <div>
-        <a class="wordmark" href="#top">ZEROBASEONE Wire</a>
-        <p>An independent, unofficial wire for English-speaking Zerose — built to translate, schedule, and curate, never to reproduce.</p>
-      </div>
-      <div>
-        <p>ZEROBASEONE Wire is an independent fan project. It is not affiliated with, endorsed by, or sponsored by WAKEONE or the members of ZEROBASEONE. All trademarks and copyrighted material belong to their respective owners. Video appears exclusively through official YouTube embeds and is never re-hosted; no third-party photography appears on this page.</p>
-        <p class="colophon__fine">PROTOTYPE BUILD — News Desk items, the Ascend- review, and Signal Desk timestamps are compiled from public reporting as of August 2026 and linked to their original sources; this page itself is not yet a live, continuously-updated site. Times marked "estimated" have not been confirmed down to the hour by an official announcement. Verify dates and prices with the artist's official channel or store before buying anything.</p>
-      </div>
-    </div>
-  </footer>
+<footer class="colophon" id="about">
+<div class="wrap colophon__grid">
+<div>
+<a class="wordmark" href="#top">ZEROBASEONE Wire</a>
+<p>An independent, unofficial wire for English-speaking Zerose — built to translate, schedule, and curate, never to reproduce.</p>
+</div>
+<div>
+<p>ZEROBASEONE Wire is an independent fan project. It is not affiliated with, endorsed by, or sponsored by WAKEONE or the members of ZEROBASEONE. All trademarks and copyrighted material belong to their respective owners. Video appears exclusively through official YouTube embeds and is never re-hosted; no third-party photography appears on this page.</p>
+<p class="colophon__fine">PROTOTYPE BUILD — News Desk items, the Ascend- review, and Signal Desk timestamps are compiled from public reporting as of August 2026 and linked to their original sources; this page itself is not yet a live, continuously-updated site. Times marked "estimated" have not been confirmed down to the hour by an official announcement. Verify dates and prices with the artist's official channel or store before buying anything.</p>
+</div>
+</div>
+</footer>
 </div>
 
 <script>
-  // ---- Signal desk: live elapsed/countdown timers + local time conversion ----
-  (function(){
-    var tzEl = document.getElementById('detectedTz');
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (tzEl) tzEl.textContent = tz;
+// ---- Signal desk: live elapsed/countdown timers + local time conversion ----
+(function(){
+var tzEl = document.getElementById('detectedTz');
+var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+if (tzEl) tzEl.textContent = tz;
 
-    var rows = document.querySelectorAll('.signal-row');
-    rows.forEach(function(row){
-      var target = new Date(row.getAttribute('data-target'));
-      var localEl = row.querySelector('.local-time');
-      if (localEl){
-        localEl.textContent = target.toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
-      }
-      var cdEl = row.querySelector('.countdown-value');
-      var labelEl = row.querySelector('.signal-row__countdown small');
-      function tick(){
-        var now = new Date();
-        var diff = target - now;
-        var isPast = diff <= 0;
-        var abs = Math.abs(diff);
-        var d = Math.floor(abs / 86400000);
-        var h = Math.floor((abs % 86400000) / 3600000);
-        var m = Math.floor((abs % 3600000) / 60000);
-        var s = Math.floor((abs % 60000) / 1000);
-        cdEl.textContent = d + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
-        if (labelEl) labelEl.textContent = isPast ? 'time since' : 'time left';
-      }
-      tick();
-      setInterval(tick, 1000);
-    });
-  })();
+var rows = document.querySelectorAll('.signal-row');
+rows.forEach(function(row){
+var target = new Date(row.getAttribute('data-target'));
+var localEl = row.querySelector('.local-time');
+if (localEl){
+localEl.textContent = target.toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
+}
+var cdEl = row.querySelector('.countdown-value');
+var labelEl = row.querySelector('.signal-row__countdown small');
+function tick(){
+var now = new Date();
+var diff = target - now;
+var isPast = diff <= 0;
+var abs = Math.abs(diff);
+var d = Math.floor(abs / 86400000);
+var h = Math.floor((abs % 86400000) / 3600000);
+var m = Math.floor((abs % 3600000) / 60000);
+var s = Math.floor((abs % 60000) / 1000);
+cdEl.textContent = d + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
+if (labelEl) labelEl.textContent = isPast ? 'time since' : 'time left';
+}
+tick();
+setInterval(tick, 1000);
+});
+})();
 
-  // ---- Quiz desk ----
-  (function(){
-    var scores = {debut:0, cinema:0, iconik:0, current:0};
-    var qWraps = Array.prototype.slice.call(document.querySelectorAll('.quiz-question-wrap'));
-    var resultPanel = document.getElementById('quizResult');
-    var resultTitle = document.getElementById('resultTitle');
-    var resultBody = document.getElementById('resultBody');
-    var resultTrack = document.getElementById('resultTrack');
-    var resetBtn = document.getElementById('quizReset');
+// ---- Quiz desk ----
+(function(){
+var scores = {debut:0, cinema:0, iconik:0, current:0};
+var qWraps = Array.prototype.slice.call(document.querySelectorAll('.quiz-question-wrap'));
+var resultPanel = document.getElementById('quizResult');
+var resultTitle = document.getElementById('resultTitle');
+var resultBody = document.getElementById('resultBody');
+var resultTrack = document.getElementById('resultTrack');
+var resetBtn = document.getElementById('quizReset');
 
-    var results = {
-      debut: {
-        title: "You're an In Bloom purist.",
-        body: "You want the group at its origin — nine members fresh off a survival show, pure introduction energy, before any records had been set or members had left.",
-        track: "Starter track: “In Bloom”"
-      },
-      cinema: {
-        title: "Cinema Paradise is your frequency.",
-        body: "Cinematic and a little bittersweet — you came for the era built around music-video storytelling and youthful nostalgia.",
-        track: "Starter track: “Good So Bad”"
-      },
-      iconik: {
-        title: "You live in the ICONIK era forever.",
-        body: "Bold and self-assured — you want the group at full nine-member scale, delivering their first full-length statement of arrival.",
-        track: "Starter track: “ICONIK”"
-      },
-      current: {
-        title: "You're tuned to right now — the Ascend- era.",
-        body: "Lean, confident, and built to prove a point — exactly the register the five-member lineup is aiming for.",
-        track: "Starter track: “TOP 5”"
-      }
-    };
+var results = {
+debut: {
+title: "You're an In Bloom purist.",
+body: "You want the group at its origin — nine members fresh off a survival show, pure introduction energy, before any records had been set or members had left.",
+track: "Starter track: “In Bloom”"
+},
+cinema: {
+title: "Cinema Paradise is your frequency.",
+body: "Cinematic and a little bittersweet — you came for the era built around music-video storytelling and youthful nostalgia.",
+track: "Starter track: “Good So Bad”"
+},
+iconik: {
+title: "You live in the ICONIK era forever.",
+body: "Bold and self-assured — you want the group at full nine-member scale, delivering their first full-length statement of arrival.",
+track: "Starter track: “ICONIK”"
+},
+current: {
+title: "You're tuned to right now — the Ascend- era.",
+body: "Lean, confident, and built to prove a point — exactly the register the five-member lineup is aiming for.",
+track: "Starter track: “TOP 5”"
+}
+};
 
-    document.getElementById('quizBody').addEventListener('click', function(e){
-      var btn = e.target.closest('.quiz-option');
-      if (!btn) return;
-      var era = btn.getAttribute('data-era');
-      scores[era]++;
-      var currentWrap = btn.closest('.quiz-question-wrap');
-      var idx = qWraps.indexOf(currentWrap);
-      currentWrap.classList.add('is-hidden');
-      if (qWraps[idx+1]){
-        qWraps[idx+1].classList.remove('is-hidden');
-      } else {
-        var winner = Object.keys(scores).reduce(function(a,b){ return scores[a] >= scores[b] ? a : b; });
-        var r = results[winner];
-        resultTitle.textContent = r.title;
-        resultBody.textContent = r.body;
-        resultTrack.textContent = r.track;
-        resultPanel.classList.add('is-active');
-      }
-    });
+document.getElementById('quizBody').addEventListener('click', function(e){
+var btn = e.target.closest('.quiz-option');
+if (!btn) return;
+var era = btn.getAttribute('data-era');
+scores[era]++;
+var currentWrap = btn.closest('.quiz-question-wrap');
+var idx = qWraps.indexOf(currentWrap);
+currentWrap.classList.add('is-hidden');
+if (qWraps[idx+1]){
+qWraps[idx+1].classList.remove('is-hidden');
+} else {
+var winner = Object.keys(scores).reduce(function(a,b){ return scores[a] >= scores[b] ? a : b; });
+var r = results[winner];
+resultTitle.textContent = r.title;
+resultBody.textContent = r.body;
+resultTrack.textContent = r.track;
+resultPanel.classList.add('is-active');
+}
+});
 
-    resetBtn.addEventListener('click', function(){
-      scores = {debut:0, cinema:0, iconik:0, current:0};
-      qWraps.forEach(function(w, i){ w.classList.toggle('is-hidden', i !== 0); });
-      resultPanel.classList.remove('is-active');
-    });
-  })();
+resetBtn.addEventListener('click', function(){
+scores = {debut:0, cinema:0, iconik:0, current:0};
+qWraps.forEach(function(w, i){ w.classList.toggle('is-hidden', i !== 0); });
+resultPanel.classList.remove('is-active');
+});
+})();
 </script>
 </body>
 </html>
