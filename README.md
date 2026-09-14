@@ -25,7 +25,7 @@ ZEROBASEONE debuted in July 2023 as a nine-member group formed through the survi
 
 ## A note on accuracy: the "Reserved" comeback
 
-On August 16, 2026, ZEROBASEONE released a spoiler film titled "Reserved," ending on the line "TOP 5 WILL BE BACK" — confirming a new comeback from the current five-member lineup. As of this build (checked August 28, 2026), no official release date, title track, or tracklist had been disclosed. Do not add release details to this site until they're confirmed by WAKEONE, Soompi, or another reputable outlet — don't assume a release date from the spoiler-to-release gap of past eras alone.
+On August 16, 2026, ZEROBASEONE released a spoiler film titled "Reserved," ending on the line "TOP 5 WILL BE BACK" — confirming a new comeback from the current five-member lineup. As of this build (rechecked September 14, 2026), no official release date, title track, or tracklist had been disclosed, despite Sung Han-bin's October 12 solo debut and continued 回帰LOVE (Japan) promotion in the interim. Do not add release details to this site until they're confirmed by WAKEONE, Soompi, or another reputable outlet — don't assume a release date from the spoiler-to-release gap of past eras alone.
 
 ## manifest.json — K-Wire Network auto-discovery
 
